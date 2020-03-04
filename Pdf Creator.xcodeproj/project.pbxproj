@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D99E2144240F88C100752966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2143240F88C100752966 /* AppDelegate.swift */; };
+		D99E2146240F88C100752966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2145240F88C100752966 /* SceneDelegate.swift */; };
+		D99E2148240F88C100752966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2147240F88C100752966 /* ViewController.swift */; };
+		D99E214B240F88C100752966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99E2149240F88C100752966 /* Main.storyboard */; };
+		D99E214D240F88C600752966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D99E214C240F88C600752966 /* Assets.xcassets */; };
+		D99E2150240F88C600752966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99E214E240F88C600752966 /* LaunchScreen.storyboard */; };
+		D99E2158240F891200752966 /* PDFPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2157240F891200752966 /* PDFPreviewViewController.swift */; };
+		D99E215A240F894500752966 /* PdfBuilderViewController- .swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2159240F894500752966 /* PdfBuilderViewController- .swift */; };
+		D99E215C240F895B00752966 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E215B240F895B00752966 /* PDFCreator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D99E2140240F88C100752966 /* Pdf Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pdf Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99E2143240F88C100752966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D99E2145240F88C100752966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D99E2147240F88C100752966 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D99E214A240F88C100752966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D99E214C240F88C600752966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D99E214F240F88C600752966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D99E2151240F88C600752966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D99E2157240F891200752966 /* PDFPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewViewController.swift; sourceTree = "<group>"; };
+		D99E2159240F894500752966 /* PdfBuilderViewController- .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PdfBuilderViewController- .swift"; sourceTree = "<group>"; };
+		D99E215B240F895B00752966 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D99E213D240F88C100752966 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D99E2137240F88C100752966 = {
+			isa = PBXGroup;
+			children = (
+				D99E2142240F88C100752966 /* Pdf Creator */,
+				D99E2141240F88C100752966 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D99E2141240F88C100752966 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D99E2140240F88C100752966 /* Pdf Creator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D99E2142240F88C100752966 /* Pdf Creator */ = {
+			isa = PBXGroup;
+			children = (
+				D99E2143240F88C100752966 /* AppDelegate.swift */,
+				D99E2145240F88C100752966 /* SceneDelegate.swift */,
+				D99E2157240F891200752966 /* PDFPreviewViewController.swift */,
+				D99E2147240F88C100752966 /* ViewController.swift */,
+				D99E2149240F88C100752966 /* Main.storyboard */,
+				D99E214C240F88C600752966 /* Assets.xcassets */,
+				D99E214E240F88C600752966 /* LaunchScreen.storyboard */,
+				D99E2151240F88C600752966 /* Info.plist */,
+				D99E2159240F894500752966 /* PdfBuilderViewController- .swift */,
+				D99E215B240F895B00752966 /* PDFCreator.swift */,
+			);
+			path = "Pdf Creator";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D99E213F240F88C100752966 /* Pdf Creator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D99E2154240F88C600752966 /* Build configuration list for PBXNativeTarget "Pdf Creator" */;
+			buildPhases = (
+				D99E213C240F88C100752966 /* Sources */,
+				D99E213D240F88C100752966 /* Frameworks */,
+				D99E213E240F88C100752966 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pdf Creator";
+			productName = "Pdf Creator";
+			productReference = D99E2140240F88C100752966 /* Pdf Creator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D99E2138240F88C100752966 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Jon;
+				TargetAttributes = {
+					D99E213F240F88C100752966 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D99E213B240F88C100752966 /* Build configuration list for PBXProject "Pdf Creator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D99E2137240F88C100752966;
+			productRefGroup = D99E2141240F88C100752966 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D99E213F240F88C100752966 /* Pdf Creator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D99E213E240F88C100752966 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E2150240F88C600752966 /* LaunchScreen.storyboard in Resources */,
+				D99E214D240F88C600752966 /* Assets.xcassets in Resources */,
+				D99E214B240F88C100752966 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D99E213C240F88C100752966 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99E2158240F891200752966 /* PDFPreviewViewController.swift in Sources */,
+				D99E215A240F894500752966 /* PdfBuilderViewController- .swift in Sources */,
+				D99E2148240F88C100752966 /* ViewController.swift in Sources */,
+				D99E2144240F88C100752966 /* AppDelegate.swift in Sources */,
+				D99E2146240F88C100752966 /* SceneDelegate.swift in Sources */,
+				D99E215C240F895B00752966 /* PDFCreator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D99E2149240F88C100752966 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D99E214A240F88C100752966 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D99E214E240F88C600752966 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D99E214F240F88C600752966 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D99E2152240F88C600752966 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D99E2153240F88C600752966 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D99E2155240F88C600752966 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Pdf Creator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jon.Pdf-Creator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D99E2156240F88C600752966 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Pdf Creator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jon.Pdf-Creator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D99E213B240F88C100752966 /* Build configuration list for PBXProject "Pdf Creator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D99E2152240F88C600752966 /* Debug */,
+				D99E2153240F88C600752966 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D99E2154240F88C600752966 /* Build configuration list for PBXNativeTarget "Pdf Creator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D99E2155240F88C600752966 /* Debug */,
+				D99E2156240F88C600752966 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D99E2138240F88C100752966 /* Project object */;
+}
