@@ -16,6 +16,7 @@
 		D99E2158240F891200752966 /* PDFPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2157240F891200752966 /* PDFPreviewViewController.swift */; };
 		D99E215A240F894500752966 /* PdfBuilderViewController- .swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2159240F894500752966 /* PdfBuilderViewController- .swift */; };
 		D99E215C240F895B00752966 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E215B240F895B00752966 /* PDFCreator.swift */; };
+		D9FD8501240F950700A83A5F /* APPLICATION.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D9FD8500240F950700A83A5F /* APPLICATION.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D99E2157240F891200752966 /* PDFPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewViewController.swift; sourceTree = "<group>"; };
 		D99E2159240F894500752966 /* PdfBuilderViewController- .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PdfBuilderViewController- .swift"; sourceTree = "<group>"; };
 		D99E215B240F895B00752966 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		D9FD8500240F950700A83A5F /* APPLICATION.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = APPLICATION.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				D99E214C240F88C600752966 /* Assets.xcassets */,
 				D99E214E240F88C600752966 /* LaunchScreen.storyboard */,
 				D99E2151240F88C600752966 /* Info.plist */,
+				D9FD8500240F950700A83A5F /* APPLICATION.pdf */,
 				D99E2159240F894500752966 /* PdfBuilderViewController- .swift */,
 				D99E215B240F895B00752966 /* PDFCreator.swift */,
 			);
@@ -137,6 +140,7 @@
 				D99E2150240F88C600752966 /* LaunchScreen.storyboard in Resources */,
 				D99E214D240F88C600752966 /* Assets.xcassets in Resources */,
 				D99E214B240F88C100752966 /* Main.storyboard in Resources */,
+				D9FD8501240F950700A83A5F /* APPLICATION.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
