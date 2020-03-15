@@ -106,6 +106,7 @@ class PDFCreator: NSObject {
     }
     
     func addSubject(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
+        
         // 1
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         // 2
@@ -125,12 +126,25 @@ class PDFCreator: NSObject {
     
     func addApplication(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
         // 1
+        //    let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        //    // 2
+        //    let paragraphStyle = NSMutableParagraphStyle()
+        //    paragraphStyle.alignment = .natural
+        //    paragraphStyle.lineBreakMode = .byWordWrapping
+        //    // 3
+        //    let textAttributes = [
+        //      NSAttributedString.Key.paragraphStyle: paragraphStyle,
+        //      NSAttributedString.Key.font: textFont
+        //    ]
+        //    let attributedText = NSAttributedString(string: application, attributes: textAttributes)
+        
+        // 1
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         // 2
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .natural
+        paragraphStyle.alignment = .justified
         paragraphStyle.lineBreakMode = .byWordWrapping
-        paragraphStyle.lineSpacing = 2
+        paragraphStyle.lineSpacing = 1.5
         // 3
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
@@ -138,11 +152,63 @@ class PDFCreator: NSObject {
         ]
         let attributedText = NSAttributedString(string: application, attributes: textAttributes)
         // 4
-        let textRect = CGRect(x: 72, y: textTop, width: pageRect.width - 144,
-                              height: 100)
-        attributedText.draw(in: textRect)
-        // 5
-        return textRect.origin.y + textRect.size.height
+        // determine the size of CGRect needed for the string that was given by caller
+        let paragraphSize = CGSize(width: pageRect.width - 144, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+
+        // Create a CGRect that is the same size as paragraphRect but positioned on the pdf where we want to draw the paragraph
+        let positionedParagraphRect = CGRect(
+            x: 72,
+            y: textTop,
+            width: paragraphRect.width,
+            height: paragraphRect.height
+        )
+
+        // draw the paragraph into that CGRect
+        attributedText.draw(in: positionedParagraphRect)
+
+        // return the bottom of the paragraph
+        return positionedParagraphRect.origin.y + positionedParagraphRect.size.height
+    }
+    
+    func addParagraph(pageRect: CGRect, textTop: CGFloat, paragraphText: String) -> CGFloat {
+
+        let textFont = UIFont(name: "Helvetica", size: 12)
+        let backupFont = UIFont.systemFont(ofSize: 12, weight: .regular)
+
+        // Set paragraph information. (wraps at word breaks)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        paragraphStyle.lineBreakMode = .byWordWrapping
+
+        // Set the text attributes
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont ?? backupFont
+        ]
+
+        let attributedText = NSAttributedString(
+            string: paragraphText,
+            attributes: textAttributes
+        )
+
+        // determine the size of CGRect needed for the string that was given by caller
+        let paragraphSize = CGSize(width: pageRect.width - 144, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+
+        // Create a CGRect that is the same size as paragraphRect but positioned on the pdf where we want to draw the paragraph
+        let positionedParagraphRect = CGRect(
+            x: 72,
+            y: textTop,
+            width: paragraphRect.width,
+            height: paragraphRect.height
+        )
+
+        // draw the paragraph into that CGRect
+        attributedText.draw(in: positionedParagraphRect)
+
+        // return the bottom of the paragraph
+        return positionedParagraphRect.origin.y + positionedParagraphRect.size.height
     }
     
     func addRequest(pageRect: CGRect, textTop: CGFloat) -> CGFloat {

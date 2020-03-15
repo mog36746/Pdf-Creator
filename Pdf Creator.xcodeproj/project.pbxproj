@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D569F90241EAEC9002A3F4B /* Pdf_CreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D569F8F241EAEC9002A3F4B /* Pdf_CreatorUITests.swift */; };
 		D99E2144240F88C100752966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2143240F88C100752966 /* AppDelegate.swift */; };
 		D99E2146240F88C100752966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2145240F88C100752966 /* SceneDelegate.swift */; };
 		D99E2148240F88C100752966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2147240F88C100752966 /* ViewController.swift */; };
@@ -19,7 +20,20 @@
 		D9FD8501240F950700A83A5F /* APPLICATION.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D9FD8500240F950700A83A5F /* APPLICATION.pdf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0D569F92241EAEC9002A3F4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D99E2138240F88C100752966 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D99E213F240F88C100752966;
+			remoteInfo = "Pdf Creator";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0D569F8D241EAEC9002A3F4B /* Pdf CreatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pdf CreatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D569F8F241EAEC9002A3F4B /* Pdf_CreatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pdf_CreatorUITests.swift; sourceTree = "<group>"; };
+		0D569F91241EAEC9002A3F4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99E2140240F88C100752966 /* Pdf Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pdf Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99E2143240F88C100752966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D99E2145240F88C100752966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +49,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D569F8A241EAEC9002A3F4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D99E213D240F88C100752966 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D569F8E241EAEC9002A3F4B /* Pdf CreatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0D569F8F241EAEC9002A3F4B /* Pdf_CreatorUITests.swift */,
+				0D569F91241EAEC9002A3F4B /* Info.plist */,
+			);
+			path = "Pdf CreatorUITests";
+			sourceTree = "<group>";
+		};
 		D99E2137240F88C100752966 = {
 			isa = PBXGroup;
 			children = (
 				D99E2142240F88C100752966 /* Pdf Creator */,
+				0D569F8E241EAEC9002A3F4B /* Pdf CreatorUITests */,
 				D99E2141240F88C100752966 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D99E2140240F88C100752966 /* Pdf Creator.app */,
+				0D569F8D241EAEC9002A3F4B /* Pdf CreatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +114,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0D569F8C241EAEC9002A3F4B /* Pdf CreatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D569F96241EAECA002A3F4B /* Build configuration list for PBXNativeTarget "Pdf CreatorUITests" */;
+			buildPhases = (
+				0D569F89241EAEC9002A3F4B /* Sources */,
+				0D569F8A241EAEC9002A3F4B /* Frameworks */,
+				0D569F8B241EAEC9002A3F4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D569F93241EAEC9002A3F4B /* PBXTargetDependency */,
+			);
+			name = "Pdf CreatorUITests";
+			productName = "Pdf CreatorUITests";
+			productReference = 0D569F8D241EAEC9002A3F4B /* Pdf CreatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D99E213F240F88C100752966 /* Pdf Creator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D99E2154240F88C600752966 /* Build configuration list for PBXNativeTarget "Pdf Creator" */;
@@ -109,6 +159,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Jon;
 				TargetAttributes = {
+					0D569F8C241EAEC9002A3F4B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D99E213F240F88C100752966;
+					};
 					D99E213F240F88C100752966 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -128,11 +182,19 @@
 			projectRoot = "";
 			targets = (
 				D99E213F240F88C100752966 /* Pdf Creator */,
+				0D569F8C241EAEC9002A3F4B /* Pdf CreatorUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D569F8B241EAEC9002A3F4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D99E213E240F88C100752966 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +209,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D569F89241EAEC9002A3F4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D569F90241EAEC9002A3F4B /* Pdf_CreatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D99E213C240F88C100752966 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +231,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D569F93241EAEC9002A3F4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D99E213F240F88C100752966 /* Pdf Creator */;
+			targetProxy = 0D569F92241EAEC9002A3F4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D99E2149240F88C100752966 /* Main.storyboard */ = {
@@ -182,6 +260,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0D569F94241EAEC9002A3F4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Pdf CreatorUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mog.Pdf-CreatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pdf Creator";
+			};
+			name = Debug;
+		};
+		0D569F95241EAEC9002A3F4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Pdf CreatorUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mog.Pdf-CreatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pdf Creator";
+			};
+			name = Release;
+		};
 		D99E2152240F88C600752966 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -335,6 +451,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D569F96241EAECA002A3F4B /* Build configuration list for PBXNativeTarget "Pdf CreatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D569F94241EAEC9002A3F4B /* Debug */,
+				0D569F95241EAEC9002A3F4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D99E213B240F88C100752966 /* Build configuration list for PBXProject "Pdf Creator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
