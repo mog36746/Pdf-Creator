@@ -15,6 +15,9 @@ class PdfBuilderViewController: UIViewController {
   @IBOutlet weak var contactTextView: UITextView!
   @IBOutlet weak var imagePreview: UIImageView!
   
+    
+    
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String )
