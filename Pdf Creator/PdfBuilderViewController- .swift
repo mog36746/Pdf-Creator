@@ -19,8 +19,29 @@ class PdfBuilderViewController: UIViewController {
     @IBOutlet weak var fromTextField: UITextView!
     @IBOutlet weak var imagePreview: UIImageView!
     
-    
+    func setUpView() {
+        dateTextField.text = "৩০ জুলাই ২০১৮"
+        toTextField.text = """
+বরাবর
+প্রধান নির্বাহী
+সামাজিক যোগাযোগ মাধ্যম ফেসবুক
+ক্যালিফোর্নিয়া, যুক্তরাষ্ট্র
+        
+"""
+        subjectTextField.text = "বিষয়: ফেসবুক একাউন্ট সক্রিয় করার আবেদন"
+        applicationTextField.text = "সবিনয় নিবেদন এই যে, আমি একজন নিয়মিত ফেসবুক ব্যবহারকারী। গত ৫ বছর থেকে 00j1unied@gmail.com মেইলটি ব্যবহার করে এবং ফেসবুক কর্তৃপক্ষের সকল নিয়মনীতি মেনে আমি ফেসবুক ব্যবহার করে আসছি। কিন্তু গত ২দিন থেকে কোন এক অজানা কারণে আমার ফেসবুক একাউন্টটি নিষ্ক্রিয় হয়ে গেছে। যার ফলে আমি সামাজিক যোগাযোগ মাধ্যমটি ব্যবহার থেকে বঞ্চিত হচ্ছি। যা আমাকে পুরো বিশ্ব থেকে পিছিয়ে দিচ্ছে।"
+        requestTextField.text = "অতএব আবেদন এই যে, আমার একাউন্টটি কেন নিষ্ক্রিয় করে দেয়া হয়েছে তা অনুসন্ধান করে দ্রুত সক্রিয় করার মাধ্যমে আমার সামাজিক যোগাযোগের পথটি সুগম করতে আজ্ঞা হয়।"
+        fromTextField.text = """
+        
+বিনীত
+জুনাইদ হোসেন
+বাসা নং: এবিসি, রোড নং: ১২৩,
+বাংলামোটর, ঢাকা-১২১৫
+"""
+        
+    }
     override func viewDidLoad() {
+        setUpView()
         super.viewDidLoad()
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String )
         // Add subtle outline around text views

@@ -18,7 +18,7 @@ class PDFCreator: NSObject {
     let request: String
     let from: String
     let image: UIImage
-
+    
     init(date: String,  to: String, subject: String, application: String, request: String, from: String, image: UIImage){
         self.date = date
         self.to = to
@@ -125,18 +125,6 @@ class PDFCreator: NSObject {
     }
     
     func addApplication(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
-        // 1
-        //    let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-        //    // 2
-        //    let paragraphStyle = NSMutableParagraphStyle()
-        //    paragraphStyle.alignment = .natural
-        //    paragraphStyle.lineBreakMode = .byWordWrapping
-        //    // 3
-        //    let textAttributes = [
-        //      NSAttributedString.Key.paragraphStyle: paragraphStyle,
-        //      NSAttributedString.Key.font: textFont
-        //    ]
-        //    let attributedText = NSAttributedString(string: application, attributes: textAttributes)
         
         // 1
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
@@ -144,7 +132,7 @@ class PDFCreator: NSObject {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .justified
         paragraphStyle.lineBreakMode = .byWordWrapping
-        paragraphStyle.lineSpacing = 1.5
+        paragraphStyle.lineHeightMultiple = 1.15
         // 3
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
@@ -155,7 +143,7 @@ class PDFCreator: NSObject {
         // determine the size of CGRect needed for the string that was given by caller
         let paragraphSize = CGSize(width: pageRect.width - 144, height: pageRect.height)
         let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
-
+        
         // Create a CGRect that is the same size as paragraphRect but positioned on the pdf where we want to draw the paragraph
         let positionedParagraphRect = CGRect(
             x: 72,
@@ -163,50 +151,10 @@ class PDFCreator: NSObject {
             width: paragraphRect.width,
             height: paragraphRect.height
         )
-
+        
         // draw the paragraph into that CGRect
         attributedText.draw(in: positionedParagraphRect)
-
-        // return the bottom of the paragraph
-        return positionedParagraphRect.origin.y + positionedParagraphRect.size.height
-    }
-    
-    func addParagraph(pageRect: CGRect, textTop: CGFloat, paragraphText: String) -> CGFloat {
-
-        let textFont = UIFont(name: "Helvetica", size: 12)
-        let backupFont = UIFont.systemFont(ofSize: 12, weight: .regular)
-
-        // Set paragraph information. (wraps at word breaks)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .justified
-        paragraphStyle.lineBreakMode = .byWordWrapping
-
-        // Set the text attributes
-        let textAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont ?? backupFont
-        ]
-
-        let attributedText = NSAttributedString(
-            string: paragraphText,
-            attributes: textAttributes
-        )
-
-        // determine the size of CGRect needed for the string that was given by caller
-        let paragraphSize = CGSize(width: pageRect.width - 144, height: pageRect.height)
-        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
-
-        // Create a CGRect that is the same size as paragraphRect but positioned on the pdf where we want to draw the paragraph
-        let positionedParagraphRect = CGRect(
-            x: 72,
-            y: textTop,
-            width: paragraphRect.width,
-            height: paragraphRect.height
-        )
-
-        // draw the paragraph into that CGRect
-        attributedText.draw(in: positionedParagraphRect)
-
+        
         // return the bottom of the paragraph
         return positionedParagraphRect.origin.y + positionedParagraphRect.size.height
     }
@@ -216,9 +164,9 @@ class PDFCreator: NSObject {
         let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
         // 2
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .natural
+        paragraphStyle.alignment = .justified
         paragraphStyle.lineBreakMode = .byWordWrapping
-        paragraphStyle.lineSpacing = 2
+        paragraphStyle.lineHeightMultiple = 1.15
         // 3
         let textAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
@@ -226,11 +174,23 @@ class PDFCreator: NSObject {
         ]
         let attributedText = NSAttributedString(string: request, attributes: textAttributes)
         // 4
-        let textRect = CGRect(x: 72, y: textTop, width: pageRect.width - 144,
-                              height: attributedText.size().height)
-        attributedText.draw(in: textRect)
-        // 5
-        return textRect.origin.y + textRect.size.height
+        // determine the size of CGRect needed for the string that was given by caller
+        let paragraphSize = CGSize(width: pageRect.width - 144, height: pageRect.height)
+        let paragraphRect = attributedText.boundingRect(with: paragraphSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+        
+        // Create a CGRect that is the same size as paragraphRect but positioned on the pdf where we want to draw the paragraph
+        let positionedParagraphRect = CGRect(
+            x: 72,
+            y: textTop,
+            width: paragraphRect.width,
+            height: paragraphRect.height
+        )
+        
+        // draw the paragraph into that CGRect
+        attributedText.draw(in: positionedParagraphRect)
+        
+        // return the bottom of the paragraph
+        return positionedParagraphRect.origin.y + positionedParagraphRect.size.height
     }
     
     func addFrom(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
@@ -253,137 +213,19 @@ class PDFCreator: NSObject {
     
     func addImage(pageRect: CGRect, imageTop: CGFloat) {
         // 1
-        let maxHeight = pageRect.height * 0.4
-        let maxWidth = pageRect.width * 0.8
+        let maxHeight = 108.0
+        let maxWidth = 72.0
         // 2
-        let aspectWidth = maxWidth / image.size.width
-        let aspectHeight = maxHeight / image.size.height
+        let aspectWidth = CGFloat(maxWidth) / image.size.width
+        let aspectHeight = CGFloat(maxHeight) / image.size.height
         let aspectRatio = min(aspectWidth, aspectHeight)
         // 3
         let scaledWidth = image.size.width * aspectRatio
         let scaledHeight = image.size.height * aspectRatio
         // 4
-        //    let imageX = (pageRect.width - scaledWidth) / 2.0
-        let imageX = 100.0
         let imageRect = CGRect(x: 72, y: imageTop,
-                               width: 100.0, height: 50.0)
+                               width: scaledWidth, height: scaledHeight)
         // 5
         image.draw(in: imageRect)
     }
-    
-    ////Old
-    //  func addDate(pageRect: CGRect) -> CGFloat {
-    //    // 1
-    //    let titleFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-    //    // 2
-    //    let titleAttributes: [NSAttributedString.Key: Any] =
-    //      [NSAttributedString.Key.font: titleFont]
-    //    let attributedTitle = NSAttributedString(string: subject, attributes: titleAttributes)
-    //    // 3
-    //    let titleStringSize = attributedTitle.size()
-    //    // 4
-    //    let titleStringRect = CGRect(x: 72,
-    //                                 y: 72, width: titleStringSize.width,
-    //                                 height: titleStringSize.height)
-    //    // 5
-    //    attributedTitle.draw(in: titleStringRect)
-    //    // 6
-    //    return titleStringRect.origin.y + titleStringRect.size.height
-    //  }
-    //
-    //
-    //  func addSubTitle(pageRect: CGRect, titleTop: CGFloat) -> CGFloat {
-    //    // 1
-    //    let titleFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-    //    // 2
-    //    let titleAttributes: [NSAttributedString.Key: Any] =
-    //      [NSAttributedString.Key.font: titleFont]
-    //    let attributedTitle = NSAttributedString(string: subject, attributes: titleAttributes)
-    //    // 3
-    //    let titleStringSize = attributedTitle.size()
-    //    // 4
-    //    let titleStringRect = CGRect(x: 72,
-    //                                 y: titleTop, width: titleStringSize.width,
-    //                                 height: titleStringSize.height)
-    //    // 5
-    //    attributedTitle.draw(in: titleStringRect)
-    //    // 6
-    //    return titleStringRect.origin.y + titleStringRect.size.height
-    //  }
-    //
-    //
-    //  func addBodyText(pageRect: CGRect, textTop: CGFloat) {
-    //    // 1
-    //    let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-    //    // 2
-    //    let paragraphStyle = NSMutableParagraphStyle()
-    //    paragraphStyle.alignment = .natural
-    //    paragraphStyle.lineBreakMode = .byWordWrapping
-    //    // 3
-    //    let textAttributes = [
-    //      NSAttributedString.Key.paragraphStyle: paragraphStyle,
-    //      NSAttributedString.Key.font: textFont
-    //    ]
-    //    let attributedText = NSAttributedString(string: application, attributes: textAttributes)
-    //    // 4
-    //    let textRect = CGRect(x: 72, y: textTop, width: pageRect.width - 144,
-    //                          height: pageRect.height - textTop - pageRect.height / 5.0)
-    //    attributedText.draw(in: textRect)
-    //  }
-    
-    
-    //  // 1
-    //  func drawTearOffs(_ drawContext: CGContext, pageRect: CGRect,
-    //                    tearOffY: CGFloat, numberTabs: Int) {
-    //    // 2
-    //    drawContext.saveGState()
-    //    drawContext.setLineWidth(2.0)
-    //
-    //    // 3
-    //    drawContext.move(to: CGPoint(x: 0, y: tearOffY))
-    //    drawContext.addLine(to: CGPoint(x: pageRect.width, y: tearOffY))
-    //    drawContext.strokePath()
-    //    drawContext.restoreGState()
-    //
-    //    // 4
-    //    drawContext.saveGState()
-    //    let dashLength = CGFloat(72.0 * 0.2)
-    //    drawContext.setLineDash(phase: 0, lengths: [dashLength, dashLength])
-    //    // 5
-    //    let tabWidth = pageRect.width / CGFloat(numberTabs)
-    //    for tearOffIndex in 1..<numberTabs {
-    //      // 6
-    //      let tabX = CGFloat(tearOffIndex) * tabWidth
-    //      drawContext.move(to: CGPoint(x: tabX, y: tearOffY))
-    //      drawContext.addLine(to: CGPoint(x: tabX, y: pageRect.height))
-    //      drawContext.strokePath()
-    //    }
-    //    // 7
-    //    drawContext.restoreGState()
-    //  }
-    //
-    //  func drawContactLabels(_ drawContext: CGContext, pageRect: CGRect, numberTabs: Int) {
-    //    let contactTextFont = UIFont.systemFont(ofSize: 10.0, weight: .regular)
-    //    let paragraphStyle = NSMutableParagraphStyle()
-    //    paragraphStyle.alignment = .natural
-    //    paragraphStyle.lineBreakMode = .byWordWrapping
-    //    let contactBlurbAttributes = [
-    //      NSAttributedString.Key.paragraphStyle: paragraphStyle,
-    //      NSAttributedString.Key.font: contactTextFont
-    //    ]
-    //    let attributedContactText = NSMutableAttributedString(string: contactInfo, attributes: contactBlurbAttributes)
-    //    // 1
-    //    let textHeight = attributedContactText.size().height
-    //    let tabWidth = pageRect.width / CGFloat(numberTabs)
-    //    let horizontalOffset = (tabWidth - textHeight) / 2.0
-    //    drawContext.saveGState()
-    //    // 2
-    //    drawContext.rotate(by: -90.0 * CGFloat.pi / 180.0)
-    //    for tearOffIndex in 0...numberTabs {
-    //      let tabX = CGFloat(tearOffIndex) * tabWidth + horizontalOffset
-    //      // 3
-    //      attributedContactText.draw(at: CGPoint(x: -pageRect.height + 5.0, y: tabX))
-    //    }
-    //    drawContext.restoreGState()
-    //  }
 }
