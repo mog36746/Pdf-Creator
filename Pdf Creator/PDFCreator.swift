@@ -127,7 +127,7 @@ class PDFCreator: NSObject {
     func addApplication(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
         
         // 1
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 11.0, weight: .regular)
         // 2
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .justified
@@ -161,7 +161,7 @@ class PDFCreator: NSObject {
     
     func addRequest(pageRect: CGRect, textTop: CGFloat) -> CGFloat {
         // 1
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: 10.0, weight: .regular)
         // 2
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .justified
