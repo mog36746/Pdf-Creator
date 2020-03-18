@@ -10,7 +10,6 @@
 		0D569F90241EAEC9002A3F4B /* Pdf_CreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D569F8F241EAEC9002A3F4B /* Pdf_CreatorUITests.swift */; };
 		D99E2144240F88C100752966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2143240F88C100752966 /* AppDelegate.swift */; };
 		D99E2146240F88C100752966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2145240F88C100752966 /* SceneDelegate.swift */; };
-		D99E2148240F88C100752966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E2147240F88C100752966 /* ViewController.swift */; };
 		D99E214B240F88C100752966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99E2149240F88C100752966 /* Main.storyboard */; };
 		D99E214D240F88C600752966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D99E214C240F88C600752966 /* Assets.xcassets */; };
 		D99E2150240F88C600752966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99E214E240F88C600752966 /* LaunchScreen.storyboard */; };
@@ -37,7 +36,6 @@
 		D99E2140240F88C100752966 /* Pdf Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pdf Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99E2143240F88C100752966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D99E2145240F88C100752966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D99E2147240F88C100752966 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D99E214A240F88C100752966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D99E214C240F88C600752966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D99E214F240F88C600752966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				D99E2143240F88C100752966 /* AppDelegate.swift */,
 				D99E2145240F88C100752966 /* SceneDelegate.swift */,
 				D99E2157240F891200752966 /* PDFPreviewViewController.swift */,
-				D99E2147240F88C100752966 /* ViewController.swift */,
 				D99E2149240F88C100752966 /* Main.storyboard */,
 				D99E214C240F88C600752966 /* Assets.xcassets */,
 				D99E214E240F88C600752966 /* LaunchScreen.storyboard */,
@@ -223,7 +220,6 @@
 			files = (
 				D99E2158240F891200752966 /* PDFPreviewViewController.swift in Sources */,
 				D99E215A240F894500752966 /* PdfBuilderViewController- .swift in Sources */,
-				D99E2148240F88C100752966 /* ViewController.swift in Sources */,
 				D99E2144240F88C100752966 /* AppDelegate.swift in Sources */,
 				D99E2146240F88C100752966 /* SceneDelegate.swift in Sources */,
 				D99E215C240F895B00752966 /* PDFCreator.swift in Sources */,
