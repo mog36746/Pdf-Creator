@@ -20,6 +20,13 @@ class PdfBuilderViewController: UIViewController {
     @IBOutlet weak var imagePreview: UIImageView!
     @IBOutlet weak var selectImageButton: UIButton!
     
+    @IBOutlet weak var size8: UIButton!
+    @IBOutlet weak var size9: UIButton!
+    @IBOutlet weak var size10: UIButton!
+    @IBOutlet weak var size11: UIButton!
+    @IBOutlet weak var size12: UIButton!
+    var fontSize: CGFloat = 10
+    
     func setUpView() {
         dateTextField.text = "৩০ জুলাই ২০১৮"
         toTextField.text = """
@@ -94,10 +101,14 @@ class PdfBuilderViewController: UIViewController {
         }
         
         // 3
-        let pdfCreator = PDFCreator(fontSize: 8.0, date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
+        let pdfCreator = PDFCreator(fontSize: fontSize, date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
         let pdfData = pdfCreator.createFlyer()
         let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
         present(vc, animated: true, completion: nil)
+    }
+    @IBAction func fontSizeSelector(_ sender: UIButton) {
+        fontSize = CGFloat(sender.tag)
+        
     }
     
     @IBAction func selectImageTouched(_ sender: Any) {
@@ -163,7 +174,7 @@ class PdfBuilderViewController: UIViewController {
                 let request = requestTextField.text,
                 let from = fromTextField.text,
                 let image = imagePreview.image {
-                let pdfCreator = PDFCreator(fontSize: 8.0, date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
+                let pdfCreator = PDFCreator(fontSize: fontSize, date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
                 vc.documentData = pdfCreator.createFlyer()
             }
         }
