@@ -18,6 +18,7 @@ class PdfBuilderViewController: UIViewController {
     @IBOutlet weak var requestTextField: UITextView!
     @IBOutlet weak var fromTextField: UITextView!
     @IBOutlet weak var imagePreview: UIImageView!
+    @IBOutlet weak var selectImageButton: UIButton!
     
     func setUpView() {
         dateTextField.text = "৩০ জুলাই ২০১৮"
@@ -45,17 +46,24 @@ class PdfBuilderViewController: UIViewController {
 """
         
     }
+    func setBorder(textField: UIView) {
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 1.0
+        textField.layer.cornerRadius = 4.0
+    }
     override func viewDidLoad() {
         setUpView()
         super.viewDidLoad()
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String )
         // Add subtle outline around text views
-        applicationTextField.layer.borderColor = UIColor.gray.cgColor
-        applicationTextField.layer.borderWidth = 1.0
-        applicationTextField.layer.cornerRadius = 4.0
-        requestTextField.layer.borderColor = UIColor.gray.cgColor
-        requestTextField.layer.borderWidth = 1.0
-        requestTextField.layer.cornerRadius = 4.0
+        setBorder(textField: dateTextField)
+        setBorder(textField: toTextField)
+        setBorder(textField: subjectTextField)
+        setBorder(textField: applicationTextField)
+        setBorder(textField: requestTextField)
+        setBorder(textField: fromTextField)
+        setBorder(textField: imagePreview)
+
         
         // Add the share icon and action
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction))
@@ -86,7 +94,7 @@ class PdfBuilderViewController: UIViewController {
         }
         
         // 3
-        let pdfCreator = PDFCreator(date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
+        let pdfCreator = PDFCreator(fontSize: 8.0, date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
         let pdfData = pdfCreator.createFlyer()
         let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
         present(vc, animated: true, completion: nil)
@@ -155,7 +163,7 @@ class PdfBuilderViewController: UIViewController {
                 let request = requestTextField.text,
                 let from = fromTextField.text,
                 let image = imagePreview.image {
-                let pdfCreator = PDFCreator(date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
+                let pdfCreator = PDFCreator(fontSize: 8.0, date: date, to: to, subject: subject, application: application, request: request, from: from, image: image)
                 vc.documentData = pdfCreator.createFlyer()
             }
         }
@@ -171,6 +179,8 @@ extension PdfBuilderViewController: UIImagePickerControllerDelegate {
         
         imagePreview.image = selectedImage
         imagePreview.isHidden = false
+        selectImageButton.setTitle("", for: .normal)
+        
         
         dismiss(animated: true, completion: nil)
     }

@@ -11,6 +11,7 @@ import PDFKit
 
 
 class PDFCreator: NSObject {
+    let fontSize: CGFloat
     let date: String
     let to: String
     let subject: String
@@ -19,7 +20,7 @@ class PDFCreator: NSObject {
     let from: String
     let image: UIImage
     
-    init(date: String,  to: String, subject: String, application: String, request: String, from: String, image: UIImage){
+    init(fontSize: CGFloat, date: String,  to: String, subject: String, application: String, request: String, from: String, image: UIImage){
         self.date = date
         self.to = to
         self.subject = subject
@@ -27,6 +28,7 @@ class PDFCreator: NSObject {
         self.request = request
         self.from = from
         self.image = image
+        self.fontSize = fontSize
     }
     
     
@@ -71,7 +73,7 @@ class PDFCreator: NSObject {
     
     func addDate(pageRect: CGRect) -> CGFloat {
         // 1
-        let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        let textFont = UIFont.systemFont(ofSize: fontSize, weight: .regular)
         // 2
         let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: textFont]
         let attributedText = NSAttributedString(string: date, attributes: textAttributes)
